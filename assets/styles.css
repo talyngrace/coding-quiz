@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,17 +6,57 @@
 }
 
 body {
-    background-color: lightsalmon;
+    background-color: rgb(235, 158, 128);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.start_btn,
-.info_box,
-.quiz.box,
-.result_box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(50%, -50%);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+.buttons {
+    margin-top: 20%;
 }
+
+#start_btn {
+    display:flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transform: (50%, -50%);
+        padding:10px;
+        border:0.1em solid #FFFFFF;
+        margin:20px;
+        margin-top: 50px;
+        border-radius:0.12em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#000000;
+        text-align:center;
+        transition: all 0.2s;
+}
+
+.buttons button {
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transform: (50%, -50%);
+        padding:10px;
+        border:0.1em solid #FFFFFF;
+        margin:20px;
+        margin-top: 50px;
+        border-radius:0.12em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:300;
+        color:#000000;
+        text-align:center;
+        transition: all 0.2s;
+        }
+
+    .buttons button:hover{
+        color:#000000;
+        background-color:#FFFFFF;
+        } */
