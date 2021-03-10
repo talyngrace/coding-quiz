@@ -8,22 +8,27 @@ console.log("hello world");
 // var button3 = document.getElementById('ques_box3');
 // var button4 = document.getElementById('ques_box4');
 
-var start_btn = document.getElementById('start_btn');
+var talynsbutton = document.getElementById('start-btn');
 var startScreen = document.getElementById('start-screen');
 
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question 
 // (not worried about timer yet)
 
+
 function startQuestions() {
 
 }
 
-start_btn.addEventListener("click", function () {
+talynsbutton.addEventListener("click", function () {
     console.log("You clicked");
     startScreen.setAttribute("style","display: none;")
     startQuestions()
-})
+});
+
+//questions appear
+
+
 
 // activity 8
 //arrays and objects?
@@ -59,7 +64,7 @@ var questions = [
 ]
 
 // WHEN I answer a question
-// THEN I am presented with another question 
+// THEN I am presented with another question - for loop 
 
 
 // WHEN I answer a question incorrectly
