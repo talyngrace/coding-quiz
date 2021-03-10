@@ -28,47 +28,38 @@ start_btn.addEventListener("click", function () {
 // activity 8
 //arrays and objects?
 
-// Question 1:
-// Commonly used data types DO NOT include:
-// strings
-// booleans
-// alerts
-// numbers
-// Answer is alerts
-var myQuestions
-// Question 2:
-// The condition in an if / else statement is enclosed within ____.
-// quotes
-// curly brackets
-// parentheses
-// square bracket
+var questions = [
 
-// Answer is parentheses
-// Question 3:
-// Arrays in JavaScript can be used to store ____.
-// numbers and strings
-// other arrays
-// booleans
-// all of the above
-// Answer is all of the above
-// Question 4:
-// String values must be enclosed within ____ when being assigned to variables.
-// commas
-// curly brackets
-// quotes
-// parentheses
-// Answer is quotes
-// Question 5:
-//   A very useful tool used during development and debugging for printing content to the debugger is:
-// JavaScript
-// terminal / bash
-// for loops
-// console.log
-// Answer is console.log
+    {
+        question: "Commonly used data types DO NOT include:",
+        choices: ["string", "booleans", "alerts", "numbers"],
+        correctanswer: "alerts",
+    },
+    {
+        question: "The condition in an if / else statement is enclosed within ____.",
+        choices: ["quotes", "curly brackets", "parentheses", "square bracket"],
+        correctanswer: ["parentheses"]
+    },
+    {
+        question: "Arrays in JavaScript can be used to store ____.",
+        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        correctanswer: "all of the above",
+    },
+    {
+        question: "String values must be enclosed within ____ when being assigned to variables.",
+        choices: ["commas", "curly brackets", "quotes", "parentheses"],
+        correctanswer: "quotes",
+    },
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+        correctanswer: "console.log"
+    }
 
+]
 
 // WHEN I answer a question
-// THEN I am presented with another question
+// THEN I am presented with another question 
 
 
 // WHEN I answer a question incorrectly
