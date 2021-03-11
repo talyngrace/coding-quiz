@@ -8,28 +8,38 @@ console.log("hello world");
 // var button3 = document.getElementById('ques_box3');
 // var button4 = document.getElementById('ques_box4');
 
-var talynsbutton = document.getElementById('start-btn');
-var startScreen = document.getElementById('start-screen');
+var startButton = document.getElementById('start-btn');
+var questionContainerElement = document.getElementById('question-container');
+var questionElement = document.getElementById('question');
+var answeerButtonsElement = document.getElementById('answer-buttons');
+
+let shuffleQuestions, currentQuestionIndex
 
 // WHEN I click the start button
 // THEN a timer starts and I am presented with a question 
 // (not worried about timer yet)
 
+startButton.addEventListener("click", startGame) 
 
-function startQuestions() {
 
+function startGame() {
+    console.log("You clicked");
+    startButton.classList.add('hide')
+    shuffleQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    questionContainerElement.classList.remove('hide')
+    setNextQuestion()
+};
+
+function setNextQuestion() {
+    showQuestions(shuffleQuestions[currentQuestionIndex])
 }
 
-talynsbutton.addEventListener("click", function () {
-    console.log("You clicked");
-    startScreen.setAttribute("style","display: none;")
-    startQuestions()
-});
+function showQuestions(question) {
+    questionElement.innerText = question.question
+}
 
 //questions appear
-
-
-
 // activity 8
 //arrays and objects?
 
@@ -64,7 +74,14 @@ var questions = [
 ]
 
 // WHEN I answer a question
-// THEN I am presented with another question - for loop 
+// THEN I am presented with another question -      for loop 
+
+for (var i = 0; i = questions.length; i++) {
+
+
+}
+
+
 
 
 // WHEN I answer a question incorrectly

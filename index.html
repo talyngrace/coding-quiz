@@ -10,20 +10,21 @@
 </head>
 
 <body>
-
-    <!-- Start Button  -->
-    <div id="start-screen">
-        <h1>Welcome to Code Quiz</h1>
-        <button id="start-btn">Start Quiz</button>
+<div class="container">
+    <div id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer1</button>
+            <button class="btn">Answer2</button>
+            <button class="btn">Answer3</button>
+            <button class="btn">Answer4</button>
+        </div>
     </div>
-    
-
-    <!-- <div class="buttons">
-        <button class="button" id="ques_box1">button 1</button>
-        <button class="button" id="ques_box2">button 2</button>
-        <button class="button" id="ques_box3">button 3</button>
-        <button class="button" id="ques_box4">button 4</button>
-    </div> -->
+    <div clsas="controls">
+        <button id="start-btn" class="start-btn btn">Start</button>
+        <button id="next-btn" class="next-btn btn hide">Next</button>
+    </div>
+</div>
 
 
     <!-- Linked JavaScript -->
