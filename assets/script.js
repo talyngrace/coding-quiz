@@ -1,17 +1,8 @@
-
-console.log("hello world");
-
-
-// //declare buttons
-// var button1 = document.getElementById('ques_box1');
-// var button2 = document.getElementById('ques_box2');
-// var button3 = document.getElementById('ques_box3');
-// var button4 = document.getElementById('ques_box4');
-
-var startButton = document.getElementById('start-btn');
-var questionContainerElement = document.getElementById('question-container');
-var questionElement = document.getElementById('question');
-var answeerButtonsElement = document.getElementById('answer-buttons');
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const questionContainerElement = document.getElementById('question-container');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
 
 let shuffleQuestions, currentQuestionIndex
 
@@ -19,7 +10,7 @@ let shuffleQuestions, currentQuestionIndex
 // THEN a timer starts and I am presented with a question 
 // (not worried about timer yet)
 
-startButton.addEventListener("click", startGame) 
+startButton.addEventListener("click", startGame)
 
 
 function startGame() {
@@ -32,55 +23,116 @@ function startGame() {
 };
 
 function setNextQuestion() {
+    resetState()
     showQuestions(shuffleQuestions[currentQuestionIndex])
-}
+};
 
 function showQuestions(question) {
     questionElement.innerText = question.question
-}
+    question.answer.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener("click", selectAnswer)
+        answerButtonsElement.appendChild(button)
+    });
+};
+
+function resetState() {
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
+};
+
+function selectAnswer() {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })  //converting to an Array
+};
+
+function setStatusClass(element, correct) {
+    clearStatusClass(element)
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+};
+
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+};
+
 
 //questions appear
 // activity 8
 //arrays and objects?
 
-var questions = [
+const questions = [
 
     {
         question: "Commonly used data types DO NOT include:",
-        choices: ["string", "booleans", "alerts", "numbers"],
-        correctanswer: "alerts",
+        answers: [
+            { text: 'alerts', correct: true },
+            { text: 'string', correct: false },
+            { text: 'booleans', correct: false },
+            { text: 'numbers', correct: false }
+
+        ]
     },
     {
-        question: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square bracket"],
-        correctanswer: ["parentheses"]
+        question: "Commonly used data types DO NOT include:",
+        answers: [
+            { text: 'alerts', correct: true },
+            { text: 'string', correct: false },
+            { text: 'booleans', correct: false },
+            { text: 'numbers', correct: false }
+
+        ]
     },
     {
-        question: "Arrays in JavaScript can be used to store ____.",
-        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        correctanswer: "all of the above",
+        question: "Commonly used data types DO NOT include:",
+        answers: [
+            { text: 'alerts', correct: true },
+            { text: 'string', correct: false },
+            { text: 'booleans', correct: false },
+            { text: 'numbers', correct: false }
+
+        ]
     },
     {
-        question: "String values must be enclosed within ____ when being assigned to variables.",
-        choices: ["commas", "curly brackets", "quotes", "parentheses"],
-        correctanswer: "quotes",
+        question: "Commonly used data types DO NOT include:",
+        answers: [
+            { text: 'alerts', correct: true },
+            { text: 'string', correct: false },
+            { text: 'booleans', correct: false },
+            { text: 'numbers', correct: false }
+
+        ]
     },
     {
-        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-        correctanswer: "console.log"
+        question: "Commonly used data types DO NOT include:",
+        answers: [
+            { text: 'alerts', correct: true },
+            { text: 'string', correct: false },
+            { text: 'booleans', correct: false },
+            { text: 'numbers', correct: false }
+
+        ]
     }
 
-]
+];
 
 // WHEN I answer a question
 // THEN I am presented with another question -      for loop 
-
-for (var i = 0; i = questions.length; i++) {
-
-
-}
-
 
 
 
