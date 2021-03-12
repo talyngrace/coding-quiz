@@ -10,7 +10,7 @@ This page uses HTML, CSS, and JavaScript to implement the tasks.
 This page consists of a start button and when pressed reveals a question with four possible answer choices. The user is guided through the questions. 
 
     
-[Screenshot 1](assets/screenshot1.png)
+[Screenshot 1](assets/screenshot.png)
     
 
 ## Features
